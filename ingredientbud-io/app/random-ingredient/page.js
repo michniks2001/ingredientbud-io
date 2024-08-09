@@ -127,7 +127,14 @@ const IngredientPage = () => {
             ))}
           </Select>
         </FormControl>
-        <Button onClick={handleGetIngredient}>Submit</Button>
+        <Button
+          color='black'
+          colorScheme='cyan'
+          bgcolor='#98eeeb'
+          onClick={handleGetIngredient}
+        >
+          Submit
+        </Button>
       </Stack>
 
       {ingredient && (

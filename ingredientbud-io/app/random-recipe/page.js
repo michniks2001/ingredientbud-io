@@ -176,7 +176,14 @@ const RecipePage = () => {
             placeholder='e.g., Peanuts, Gluten'
           />
         </FormControl>
-        <Button onClick={handleGetRecipe}>Submit</Button>
+        <Button
+          color='black'
+          colorScheme='cyan'
+          bgcolor='98eeeb'
+          onClick={handleGetRecipe}
+        >
+          Submit
+        </Button>
       </Stack>
 
       {recipeSections.map((section, index) => (
