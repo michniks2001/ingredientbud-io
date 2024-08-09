@@ -52,7 +52,7 @@ const AboutPage = () => {
               />
               <Box>
                 <Heading size='sm'>Samuel Michnik - Founder</Heading>
-                <Text>Founder of IngrediBud.io</Text>
+                <Text>Founder of IngrediBud</Text>
               </Box>
             </Flex>
           </Flex>
@@ -61,8 +61,8 @@ const AboutPage = () => {
           <Text>
             As someone who enjoys cooking, I find myself struggling to find new
             dishes to cook and new and exciting ingredients to work with. Here
-            at IngredientBud, I hope to take you on a journey around the world
-            one ingredient at a time.
+            at IngrediBud, I hope to take you on a journey around the world one
+            ingredient at a time.
           </Text>
         </CardBody>
         <Image
