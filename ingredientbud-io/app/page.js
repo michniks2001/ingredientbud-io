@@ -1,14 +1,9 @@
-"use client"
+"use client";
 
-import { ChakraProvider } from "@chakra-ui/react"
-import LandingPage from "./pages/landing"
+import LandingPage from "./home/page";
 
 const Home = () => {
-  return (
-    <ChakraProvider>
-      <LandingPage />
-    </ChakraProvider>
-  )
-}
+  return <LandingPage />;
+};
 
-export default Home
+export default Home;
