@@ -89,7 +89,15 @@ const IngredientPage = () => {
 
   return (
     <Box p={5}>
-      <Stack spacing={4} mb={5}>
+      <Stack
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        mr='20%'
+        ml='20%'
+        mb={5}
+        spacing={7}
+      >
         <FormControl>
           <FormLabel>Cuisine</FormLabel>
           <Input
