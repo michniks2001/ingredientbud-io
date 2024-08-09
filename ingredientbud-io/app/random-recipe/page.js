@@ -42,6 +42,7 @@ const RecipePage = () => {
       Diet: ${diet || "Any"}
       Include: ${include || "No specific ingredients"}
       Exclude: ${exclude || "No exclusions"}
+      Make sure to include a list of ingredients with the instrcutions.
     `;
 
     return groq.chat.completions.create({
@@ -133,14 +134,16 @@ const RecipePage = () => {
   };
 
   return (
-    <Box
-      p={5}
-      display='flex'
-      justifyContent='center'
-      alignItems='center'
-      flexDirection='column'
-    >
-      <Stack spacing={4} mb={5}>
+    <Box p={5}>
+      <Stack
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+        mr='20%'
+        ml='20%'
+        spacing={7}
+        mb={5}
+      >
         <FormControl>
           <FormLabel>Cuisine</FormLabel>
           <Input
@@ -177,7 +180,9 @@ const RecipePage = () => {
       </Stack>
 
       {recipeSections.map((section, index) => (
-        <Box key={index}>{renderSection(section)}</Box>
+        <Box mr='20%' ml='20%' key={index}>
+          {renderSection(section)}
+        </Box>
       ))}
     </Box>
   );
