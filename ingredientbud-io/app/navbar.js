@@ -22,18 +22,43 @@ const Navbar = () => {
       </HStack>
       <HStack spacing={4} marginRight='10px'>
         <Link href='/about'>
-          <Button colorScheme='cyan' textColor='black' bg='transparent'>
+          <Button
+            _hover={{ bg: "#87ddda" }}
+            textColor='black'
+            bg='transparent'
+            borderRadius='10px'
+          >
             About
           </Button>
         </Link>
         <Link href='random-recipe'>
-          <Button colorScheme='cyan' textColor='black' bg='transparent'>
+          <Button
+            _hover={{ bg: "#87ddda" }}
+            textColor='black'
+            bg='transparent'
+            borderRadius='10px'
+          >
             Random Recipe
           </Button>
         </Link>
         <Link href='random-ingredient'>
-          <Button colorScheme='cyan' textColor='black' bg='transparent'>
+          <Button
+            _hover={{ bg: "#87ddda" }}
+            textColor='black'
+            bg='transparent'
+            borderRadius='10px'
+          >
             Random Ingredient
+          </Button>
+        </Link>
+        <Link href='shopping-list'>
+          <Button
+            _hover={{ bg: "#87ddda" }}
+            textColor='black'
+            bg='transparent'
+            borderRadius='10px'
+          >
+            Shopping List Generator
           </Button>
         </Link>
       </HStack>
