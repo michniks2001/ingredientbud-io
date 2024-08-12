@@ -116,6 +116,7 @@ const IngredientPage = () => {
             bgColor='white'
             border='2px solid #87ddda'
             boxShadow='-4px 4px black'
+            _focus={{ boxShadow: "-4px 4px black" }}
           />
         </FormControl>
         <FormControl>
@@ -127,6 +128,7 @@ const IngredientPage = () => {
             bgColor='white'
             border='2px solid #87ddda'
             boxShadow='-4px 4px black'
+            _focus={{ boxShadow: "-4px 4px black" }}
           />
         </FormControl>
         <FormControl>
@@ -137,6 +139,7 @@ const IngredientPage = () => {
             bgColor='white'
             border='2px solid #87ddda'
             boxShadow='-4px 4px black'
+            _focus='-4px 4px black'
           >
             {classifications.map((item) => (
               <option key={item} value={item}>
