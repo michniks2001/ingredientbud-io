@@ -95,15 +95,27 @@ const IngredientPage = () => {
         alignItems='center'
         mr='20%'
         ml='20%'
-        mb={5}
         spacing={7}
+        mb={5}
+        border='2px solid #87ddda'
+        bgColor='#98eeeb'
+        borderRadius='10px'
+        boxShadow='-7px 7px black'
+        p={5}
       >
+        <Heading>Random Ingredient Generator</Heading>
+        <Text>
+          Want to challenge yourself? What can you cook with this ingredient?
+        </Text>
         <FormControl>
           <FormLabel>Cuisine</FormLabel>
           <Input
             value={cuisine}
             onChange={(e) => setCuisine(e.target.value)}
             placeholder='e.g., Italian, Mexican'
+            bgColor='white'
+            border='2px solid #87ddda'
+            boxShadow='-4px 4px black'
           />
         </FormControl>
         <FormControl>
@@ -112,6 +124,9 @@ const IngredientPage = () => {
             value={diet}
             onChange={(e) => setDiet(e.target.value)}
             placeholder='e.g., Vegetarian, Keto'
+            bgColor='white'
+            border='2px solid #87ddda'
+            boxShadow='-4px 4px black'
           />
         </FormControl>
         <FormControl>
@@ -119,6 +134,9 @@ const IngredientPage = () => {
           <Select
             value={classification}
             onChange={(e) => setClassification(e.target.value)}
+            bgColor='white'
+            border='2px solid #87ddda'
+            boxShadow='-4px 4px black'
           >
             {classifications.map((item) => (
               <option key={item} value={item}>
@@ -128,12 +146,17 @@ const IngredientPage = () => {
           </Select>
         </FormControl>
         <Button
+          size='lg'
+          marginTop='20px'
           color='black'
-          colorScheme='cyan'
-          bgcolor='#98eeeb'
+          _hover={{ bg: "#76ccc9" }}
+          bgColor='white'
+          border='2px solid #65bbb8'
+          borderRadius='10px'
+          boxShadow='-4px 4px black'
           onClick={handleGetIngredient}
         >
-          Submit
+          Generate Ingredient
         </Button>
       </Stack>
 

@@ -12,6 +12,7 @@ import {
   FormLabel,
   Stack,
   Input,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -143,13 +144,27 @@ const RecipePage = () => {
         ml='20%'
         spacing={7}
         mb={5}
+        border='2px solid #87ddda'
+        bgColor='#98eeeb'
+        borderRadius='10px'
+        boxShadow='-7px 7px black'
+        p={5}
       >
+        <Heading>Recipe Generator</Heading>
+        <Text>
+          Enter information about your recipe and our AI will generate a recipe
+          tailored to your specifications!
+        </Text>
         <FormControl>
           <FormLabel>Cuisine</FormLabel>
           <Input
             value={cuisine}
             onChange={(e) => setCuisine(e.target.value)}
             placeholder='e.g., Italian, Mexican'
+            bgColor='white'
+            border='2px solid #87ddda'
+            boxShadow='-4px 4px black'
+            _focus={{ boxShadow: "-4px 4px black" }}
           />
         </FormControl>
         <FormControl>
@@ -158,6 +173,10 @@ const RecipePage = () => {
             value={diet}
             onChange={(e) => setDiet(e.target.value)}
             placeholder='e.g., Vegetarian, Keto'
+            bgColor='white'
+            border='2px solid #87ddda'
+            boxShadow='-4px 4px black'
+            _focus={{ boxShadow: "-4px 4px black" }}
           />
         </FormControl>
         <FormControl>
@@ -166,6 +185,10 @@ const RecipePage = () => {
             value={include}
             onChange={(e) => setInclude(e.target.value)}
             placeholder='e.g., Chicken, Tomatoes'
+            bgColor='white'
+            border='2px solid #87ddda'
+            boxShadow='-4px 4px black'
+            _focus={{ boxShadow: "-4px 4px black" }}
           />
         </FormControl>
         <FormControl>
@@ -174,15 +197,24 @@ const RecipePage = () => {
             value={exclude}
             onChange={(e) => setExclude(e.target.value)}
             placeholder='e.g., Peanuts, Gluten'
+            bgColor='white'
+            border='2px solid #87ddda'
+            boxShadow='-4px 4px black'
+            _focus={{ boxShadow: "-4px 4px black" }}
           />
         </FormControl>
         <Button
+          size='lg'
+          marginTop='20px'
           color='black'
-          colorScheme='cyan'
-          bgcolor='98eeeb'
+          _hover={{ bg: "#76ccc9" }}
+          bgColor='white'
+          border='2px solid #65bbb8'
+          borderRadius='10px'
+          boxShadow='-4px 4px black'
           onClick={handleGetRecipe}
         >
-          Submit
+          Generate Recipe
         </Button>
       </Stack>
 
