@@ -38,7 +38,7 @@ const RecipePage = () => {
   const getRecipe = () => {
     // Construct the prompt based on user inputs
     const prompt = `
-      Give me a recipe.
+      Please, give me a recipe.
       Cuisine: ${cuisine || "Any"}
       Diet: ${diet || "Any"}
       Include: ${include || "No specific ingredients"}

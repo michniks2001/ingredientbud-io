@@ -44,6 +44,7 @@ const ShoppingList = () => {
     Provide for me a shopping list for the following dish: ${dishName}
     Be sure to provide prices for each item in the list and a total price for the shopping list
     Format should be the following: Ingredient: Price, after you list all the ingredients, Total Cost: cost, Underneath that, Notes: whatever notes you wish to provide
+Use current prices at WalMart store, and if an item is not produce, treat it as if we are buying the product as a whole, e.g., if a recipe calls for butter, a user wouldn't buy half a stick of butter, but rather a container that will likely have 4 sticks in one package. 
     `;
 
     return groq.chat.completions.create({

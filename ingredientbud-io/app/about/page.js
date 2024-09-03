@@ -31,7 +31,7 @@ const AboutPage = () => {
         </Text>
       </Stack>
       <Card
-        border='solid 2px #98eeeb'
+        border='solid 2px #87ddda'
         boxShadow='-7px 7px black'
         maxW='lg'
         padding='10px'
@@ -41,8 +41,9 @@ const AboutPage = () => {
         alignItems='center'
         alignSelf='center'
         marginBottom='30px'
+        bgColor="#98eeeb"
       >
-        <CardHeader>
+        <CardHeader bgColor="white" borderRadius="20px" border="solid 2px #87ddda" boxShadow="-4px 4px black">
           <Flex spacing='4'>
             <Flex flex='1' gap='4' alignItems='center' flexWrap='wrap'>
               <Avatar

@@ -1,9 +1,43 @@
 "use client";
 
-import { Button, HStack, Heading } from "@chakra-ui/react";
+import {
+  Button,
+  HStack,
+  Heading,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import { useEffect, useState } from "react";
+import { auth } from "./firebase";
 import Link from "next/link";
 
-const Navbar = () => {
+export default function Navbar() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    try {
+      await auth.signOut();
+      window.location.href = "/home";
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
+
   return (
     <HStack
       bg='#98eeeb'
@@ -31,39 +65,105 @@ const Navbar = () => {
             About
           </Button>
         </Link>
-        <Link href='random-recipe'>
+        <Menu>
+          <MenuButton
+            as={Button}
+            rightIcon={<ChevronDownIcon />}
+            _hover={{ bg: "#87ddda" }}
+            textColor='black'
+            bg='transparent'
+            borderRadius='10px'
+            _focus={{ bg: "#87ddda" }}
+          >
+            Recipes
+          </MenuButton>
+          <MenuList>
+            <MenuItem _hover={{ bg: "white" }}>
+              <Link href='random-recipe'>
+                <Button
+                  _hover={{ bg: "#87ddda" }}
+                  textColor='black'
+                  bg='transparent'
+                  borderRadius='10px'
+                >
+                  Random Recipe
+                </Button>
+              </Link>
+            </MenuItem>
+            <MenuItem _hover={{ bg: "white" }}>
+              <Link href='random-ingredient'>
+                <Button
+                  _hover={{ bg: "#87ddda" }}
+                  textColor='black'
+                  bg='transparent'
+                  borderRadius='10px'
+                >
+                  Random Ingredient
+                </Button>
+              </Link>
+            </MenuItem>
+            <MenuItem _hover={{ bg: "white" }}>
+              <Link href='shopping-list'>
+                <Button
+                  _hover={{ bg: "#87ddda" }}
+                  textColor='black'
+                  bg='transparent'
+                  borderRadius='10px'
+                >
+                  Shopping List Generator
+                </Button>
+              </Link>
+            </MenuItem>
+          </MenuList>
+        </Menu>
+        <Link href='pantry'>
           <Button
             _hover={{ bg: "#87ddda" }}
             textColor='black'
             bg='transparent'
             borderRadius='10px'
           >
-            Random Recipe
+            Pantry
           </Button>
         </Link>
-        <Link href='random-ingredient'>
+        {user ? (
           <Button
+            onClick={() => {
+              auth.signOut();
+              window.location.href = "/home";
+            }}
             _hover={{ bg: "#87ddda" }}
             textColor='black'
             bg='transparent'
             borderRadius='10px'
           >
-            Random Ingredient
+            Sign Out
           </Button>
-        </Link>
-        <Link href='shopping-list'>
-          <Button
-            _hover={{ bg: "#87ddda" }}
-            textColor='black'
-            bg='transparent'
-            borderRadius='10px'
-          >
-            Shopping List Generator
-          </Button>
-        </Link>
+        ) : (
+          <HStack>
+            <Link href='sign-up'>
+              <Button
+                _hover={{ bg: "#87ddda" }}
+                textColor='black'
+                bg='transparent'
+                borderRadius='10px'
+              >
+                Sign Up
+              </Button>
+            </Link>
+            <Link href='log-in'>
+              <Button
+                _hover={{ bg: "#87ddda" }}
+                textColor='black'
+                bg='transparent'
+                borderRadius='10px'
+              >
+                Log In
+              </Button>
+            </Link>
+          </HStack>
+        )}
       </HStack>
     </HStack>
   );
-};
-
-export default Navbar;
+}
